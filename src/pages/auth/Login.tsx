@@ -65,6 +65,15 @@ export default function Home() {
           <SocialButton icon={<FcGoogle />} />
           <SocialButton icon={<FaGithub />} />
         </div>
+        <div className="flex items-center space-x-2 text-sm pt-8">
+          <p>New member?</p>
+          <a
+            href="/register"
+            className="font-medium underline underline-offset-2"
+          >
+            Sign up now
+          </a>
+        </div>
       </form>
     </div>
   );
