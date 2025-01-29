@@ -25,3 +25,6 @@ dist-ssr
 
 # unnecessary lock files
 package-lock.json
+
+# .env
+.env
