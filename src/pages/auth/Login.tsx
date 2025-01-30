@@ -23,7 +23,7 @@ export default function Home() {
   };
 
   return (
-    <div className="grid h-screen place-items-center bg-[url(/login.jpg)] bg-cover">
+    <div className="grid h-screen place-items-center bg-[url(/login.jpg)] bg-cover bg-gray-500 bg-blend-multiply">
       <form
         className="p-8 rounded-2xl border border-gray-400 shadow flex flex-col space-y-3 bg-white w-[400px]"
         onSubmit={handleSubmit(handleLogin)}

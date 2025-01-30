@@ -6,13 +6,17 @@ import SocialButton from "../../components/ui/SocialButton";
 
 interface Register {
   email: string;
+  firstName: string;
+  lastName: string;
   password: string;
+  confirmPassword: string;
 }
 
 export default function Register() {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm<Register>();
 
@@ -23,7 +27,7 @@ export default function Register() {
   };
 
   return (
-    <div className="grid h-screen place-items-center bg-[url(/login.jpg)] bg-cover">
+    <div className="grid h-screen place-items-center bg-[url(/login.jpg)] bg-cover bg-gray-500 bg-blend-multiply">
       <form
         className="p-8 rounded-2xl border border-gray-400 shadow flex flex-col space-y-3 bg-white w-[400px]"
         onSubmit={handleSubmit(handleLogin)}
@@ -36,6 +40,26 @@ export default function Register() {
             Sign up to customize your viewing experience
           </p>
         </div>
+        <input
+          type="text"
+          placeholder="First Name"
+          {...register("firstName", {
+            required: "First name is required!",
+          })}
+        />
+        {errors.firstName && (
+          <p className="text-xs text-red-600">{errors.firstName.message}</p>
+        )}
+        <input
+          type="text"
+          placeholder="Last Name"
+          {...register("lastName", {
+            required: "Last name is required!",
+          })}
+        />
+        {errors.lastName && (
+          <p className="text-xs text-red-600">{errors.lastName.message}</p>
+        )}
         <input
           type="email"
           placeholder="Email"
@@ -53,6 +77,21 @@ export default function Register() {
         />
         {errors.password && (
           <p className="text-xs text-red-600">{errors.password?.message}</p>
+        )}
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          {...register("confirmPassword", {
+            required: "Password confirmation is required!",
+            validate: (value) => {
+              return value === watch("password") || "Passwords do not match!";
+            },
+          })}
+        />
+        {errors.confirmPassword && (
+          <p className="text-xs text-red-600">
+            {errors.confirmPassword?.message}
+          </p>
         )}
         <button className="w-full px-2 py-1.5 text-white text-sm bg-gray-800 rounded-2xl font-medium">
           Register
