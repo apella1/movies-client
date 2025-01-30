@@ -1,3 +1,9 @@
+import Navbar from "../components/ui/navbar";
+
 export default function Movies() {
-  return <div>Movies</div>;
+  return (
+    <div>
+      <Navbar />
+    </div>
+  );
 }

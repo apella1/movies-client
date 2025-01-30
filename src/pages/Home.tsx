@@ -1,7 +1,11 @@
+import FeaturedShow from "../components/FeaturedShow";
+import Navbar from "../components/ui/navbar";
+
 export default function Home() {
   return (
-    <div>
-      <nav></nav>
-    </div>
+    <main className="flex flex-col space-y-4">
+      <Navbar />
+      <FeaturedShow />
+    </main>
   );
 }
