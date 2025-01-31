@@ -15,7 +15,7 @@ export default function GenreCard({ genre }: { genre: Genre }) {
   const handleGenreClick = (clickedGenre: string) => {
     let currentGenres = userSelectedGenres;
     let genres: string[];
-    if (currentGenres.find((genre) => genre === clickedGenre)) {
+    if (currentGenres.some((genre) => genre === clickedGenre)) {
       genres = currentGenres.filter((genre) => genre != clickedGenre);
       dispatch(setUserSelectedGenres(genres));
     } else {
@@ -24,13 +24,13 @@ export default function GenreCard({ genre }: { genre: Genre }) {
     }
   };
 
-  const isGenreSelected = userSelectedGenres.find(
+  const isGenreSelected = userSelectedGenres.some(
     (userSelectedGenre) => userSelectedGenre === genre.name
   );
 
   return (
     <button
-      className={`p-4 rounded-md flex items-center space-x-4 ${
+      className={`cursor-pointer p-4 rounded-md flex items-center space-x-4 ${
         isGenreSelected ? "bg-blue-200" : "bg-green-300"
       }`}
       onClick={() => handleGenreClick(genre.name)}

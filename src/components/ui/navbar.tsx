@@ -22,7 +22,7 @@ export default function Navbar() {
           </a>
         ))}
       </div>
-      <input type="search" placeholder="Search by name" />
+      <input type="search" placeholder="Search by name" className="rounded" />
     </nav>
   );
 }

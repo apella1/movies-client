@@ -1,9 +1,14 @@
-import Navbar from "../components/ui/navbar";
+import Genres from "../components/Genres";
+import MoviesList from "../components/MoviesList";
+import MainLayout from "../layouts/MainLayout";
 
 export default function TVShows() {
   return (
-    <div className="">
-      <Navbar />
-    </div>
+    <MainLayout>
+      <div className="pt-8">
+        <Genres />
+      </div>
+      <MoviesList />
+    </MainLayout>
   );
 }

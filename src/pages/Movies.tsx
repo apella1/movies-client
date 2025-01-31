@@ -1,9 +1,12 @@
-import Navbar from "../components/ui/navbar";
+import Genres from "../components/Genres";
+import MoviesList from "../components/MoviesList";
+import MainLayout from "../layouts/MainLayout";
 
 export default function Movies() {
   return (
-    <div className="">
-      <Navbar />
-    </div>
+    <MainLayout>
+      <Genres />
+      <MoviesList />
+    </MainLayout>
   );
 }

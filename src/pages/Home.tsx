@@ -1,13 +1,14 @@
 import FeaturedShow from "../components/FeaturedShow";
 import Genres from "../components/Genres";
-import Navbar from "../components/ui/navbar";
+import MoviesList from "../components/MoviesList";
+import MainLayout from "../layouts/MainLayout";
 
 export default function Home() {
   return (
-    <main className="flex flex-col space-y-4">
-      <Navbar />
+    <MainLayout>
       <FeaturedShow />
       <Genres />
-    </main>
+      <MoviesList />
+    </MainLayout>
   );
 }
