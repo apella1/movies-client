@@ -2,7 +2,7 @@ import Navbar from "../components/ui/navbar";
 
 export default function Movies() {
   return (
-    <div>
+    <div className="p-8">
       <Navbar />
     </div>
   );

@@ -2,7 +2,7 @@ import Navbar from "../components/ui/navbar";
 
 export default function TVShows() {
   return (
-    <div>
+    <div className="">
       <Navbar />
     </div>
   );

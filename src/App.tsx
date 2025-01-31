@@ -7,7 +7,7 @@ import Register from "./pages/auth/Register";
 
 export default function App() {
   return (
-    <main className="p-8 bg-gray-400 min-h-screen">
+    <main className="min-h-screen">
       <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
