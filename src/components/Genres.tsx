@@ -22,7 +22,7 @@ const genres: Genre[] = [
 
 export default function Genres() {
   return (
-    <div className="flex items-center space-x-4 px-16 py-2">
+    <div className="flex items-center space-x-4 px-16 py-6">
       {genres.map((genre) => (
         <GenreCard genre={genre} key={genre.name} />
       ))}

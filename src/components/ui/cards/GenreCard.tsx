@@ -30,8 +30,8 @@ export default function GenreCard({ genre }: { genre: Genre }) {
 
   return (
     <button
-      className={`cursor-pointer p-4 rounded-md flex items-center space-x-4 ${
-        isGenreSelected ? "bg-blue-200" : "bg-green-300"
+      className={`cursor-pointer px-4 py-2 rounded-md flex items-center space-x-4 ${
+        isGenreSelected ? "bg-blue-200" : "bg-teal-100"
       }`}
       onClick={() => handleGenreClick(genre.name)}
     >
