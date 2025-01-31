@@ -2,10 +2,12 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface MoviesState {
   searchTerm: string;
+  userSelectedGenres: Array<string>;
 }
 
 const initialState: MoviesState = {
   searchTerm: "",
+  userSelectedGenres: [],
 };
 
 export const moviesSlice = createSlice({
@@ -15,8 +17,11 @@ export const moviesSlice = createSlice({
     setSearchTerm(state, action: PayloadAction<string>) {
       state.searchTerm = action.payload;
     },
+    setUserSelectedGenres(state, action: PayloadAction<string[]>) {
+      state.userSelectedGenres = action.payload;
+    },
   },
 });
 
-export const { setSearchTerm } = moviesSlice.actions;
+export const { setSearchTerm, setUserSelectedGenres } = moviesSlice.actions;
 export default moviesSlice.reducer;
